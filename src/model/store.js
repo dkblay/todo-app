@@ -4,38 +4,25 @@ export class TodoService {
     constructor () {
         this.toggleCompletedStatus = this.toggleCompletedStatus.bind(this);
         this.editTodo = this.editTodo.bind(this);
-        this._todos = [
-            {todoId: 1, name: 'Create Todo', completed: false}, 
-            {todoId: 2, name: 'Read Todo', completed: false}];
     }
 
+
+    // return the collection
     get todos () {
-        return this._todos;
     }
 
+    // Add a new todo to the collection
     addTodo (data) {
-        this._todos.push(new Todo(data));
     }
 
+    // Edit the text of a specific todo
     editTodo(id, text) {
-        const found = this._todos.find( ({todoId}) => todoId == id );
-        if (!found) {
-            return;
-        }
-        found.name = text;
+     
     }
 
-    toggleCompletedStatus (id) {
-        const found = this._todos.find( ({todoId}) => todoId == id );
-        if (!found) {
-            return;
-        }
-        
-        if(found.completed) {
-            found.completed = false;
 
-        } else {
-            found.completed = true;
-        }
+    // toggle completion status
+    toggleCompletedStatus (id) {
+       
     }
 }
